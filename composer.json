@@ -1,0 +1,25 @@
+{
+    "name": "JoaquinBriceno/image-overlay-app-php",
+    "description": "The description of my awesome PHP application",
+    "require": {
+        "php": ">=5.6.0",
+        "ext-pdo": "*",
+        "slim/slim": "2.4.*",
+        "slim/extras": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joaquin Briceno",
+            "email": "joaquinbriceno1@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ImageOverlayApp\\": "lib/"
+        }
+    },
+    "archive": {
+        "exclude": ["vendor", ".DS_Store", "*.log"]
+    }
+}
