@@ -6,7 +6,7 @@
 *.user
 *.sln.docstates
 vwd-migrations/
-nav-results/
+vendor/
 nav-inventory-results.txt
 build/
 logs/
