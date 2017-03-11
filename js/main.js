@@ -87,8 +87,31 @@ loadImageFile('images/graffiti.png');
 var tools = {
 	/** Saving Images */
 	save: function() {
-	    var dataURL = stage.toDataURL();
-        window.open(dataURL);
+	    var dataURL = stage.toDataURL("image/png");
+	    var srcData = {
+	    	contentType: "application/octet-stream",
+	    	dataUrl: dataURL
+	    };
+
+	    var ajxOpts = {
+	    	method: "POST",
+	    	url: "data.php",
+	    	data: {"dataUrl": dataURL},
+	    	contentType: 'application/octet-stream; charset=UTF-8'
+	    };
+
+	    console.log("Posting to data.php");
+	    console.log(ajxOpts.data);
+
+	    $.ajax(ajxOpts).done(function(data) {
+	    	console.log("Successfully Generated");
+	    	console.log(data);
+	    	window.open(dataURL);
+	    }).fail(function() {
+	    	console.log("Error Response");
+	    }).always(function() {
+	    	console.log("Listening to AJAX");
+	    });
 	},
 	/**
 	 * Rotation
